@@ -20,3 +20,7 @@ OFFSET $2;
 -- name: DeleteTransfer :exec
 DELETE FROM transfers 
 WHERE id = $1;
+
+-- name: DeleteTransferById :exec
+DELETE FROM transfers
+WHERE from_account_id = $1 OR to_account_id = $1;
