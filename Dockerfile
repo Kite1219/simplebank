@@ -17,7 +17,7 @@ RUN curl -L https://github.com/golang-migrate/migrate/releases/download/v4.17.0/
 
 # ---------- run stage ----------
 FROM alpine:3.22
-
+~
 WORKDIR /app
 
 # API binary
@@ -35,4 +35,5 @@ COPY db/migration ./migration
 RUN chmod +x /app/start.sh /app/wait-for.sh
 
 EXPOSE 8080
-ENTRYPOINT ["/app/start.sh"]
+CMD [ "/app/main" ]
+ENTRYPOINT [ "/app/start.sh" ]
