@@ -19,7 +19,7 @@ jobs:
       with:
         version: 'v1.33.2' # default is latest stable
       id: install
-      
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
@@ -55,4 +55,5 @@ jobs:
         kubectl apply -f eks/issuer.yaml
         kubectl apply -f eks/ingress.yaml
 
-
+    - name: Force Deployment restart (always get latest image)
+      run: kubectl rollout restart deployment simple-bank-api-deployment
