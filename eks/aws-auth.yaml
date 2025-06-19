@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapUsers: |
+    - userarn: arn:aws:iam::131464424321:user/github-ci
+      username: github-ci
+      groups:
+        - system:masters
+
+  mapRoles: |
+    # Match by private DNS name
+    - rolearn: arn:aws:iam::131464424321:role/AmazonEKSNodeRole
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
+
+    # (Optional) also match by instance ID
+    - rolearn: arn:aws:iam::131464424321:role/AmazonEKSNodeRole
+      username: system:node:{{EC2InstanceID}}
+      groups:
+        - system:bootstrappers
+        - system:nodes

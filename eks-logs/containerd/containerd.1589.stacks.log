@@ -1,0 +1,311 @@
+goroutine 33 [running]:
+github.com/containerd/containerd/cmd/containerd/command.dumpStacks(0x1)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main.go:377 +0x6b
+github.com/containerd/containerd/cmd/containerd/command.handleSignals.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main_unix.go:57 +0x1e5
+created by github.com/containerd/containerd/cmd/containerd/command.handleSignals in goroutine 1
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main_unix.go:40 +0xd3
+
+goroutine 1 [chan receive, 134 minutes]:
+github.com/containerd/containerd/cmd/containerd/command.App.func1(0xc0000f2dc0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main.go:286 +0x11bb
+github.com/containerd/containerd/vendor/github.com/urfave/cli.HandleAction({0x5588693c6b80?, 0x558869712718?}, 0xc0004408c0?)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/urfave/cli/app.go:524 +0x47
+github.com/containerd/containerd/vendor/github.com/urfave/cli.(*App).Run(0xc0004408c0, {0xc00012a280, 0x1, 0x1})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/urfave/cli/app.go:286 +0x79b
+main.main()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/main.go:39 +0x2d
+
+goroutine 36 [syscall]:
+os/signal.signal_recv()
+	/usr/lib/golang/src/runtime/sigqueue.go:152 +0x29
+os/signal.loop()
+	/usr/lib/golang/src/os/signal/signal_unix.go:23 +0x13
+created by os/signal.Notify.func1.1 in goroutine 1
+	/usr/lib/golang/src/os/signal/signal.go:151 +0x1f
+
+goroutine 46 [IO wait, 134 minutes]:
+internal/poll.runtime_pollWait(0x7f898cd79df8, 0x72)
+	/usr/lib/golang/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc0000ce080?, 0x20?, 0x0)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc0000ce080)
+	/usr/lib/golang/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc0000ce080)
+	/usr/lib/golang/src/net/fd_unix.go:172 +0x29
+net.(*UnixListener).accept(0x558867c5589e?)
+	/usr/lib/golang/src/net/unixsock_posix.go:172 +0x16
+net.(*UnixListener).Accept(0xc0005d44e0)
+	/usr/lib/golang/src/net/unixsock.go:260 +0x30
+github.com/containerd/containerd/vendor/github.com/containerd/ttrpc.(*Server).Serve(0xc00021a840, {0x55886973b510, 0x55886a783600}, {0x558869732030, 0xc0005d44e0})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/containerd/ttrpc/server.go:99 +0x1fd
+github.com/containerd/containerd/services/server.(*Server).ServeTTRPC(0x0?, {0x558869732030?, 0xc0005d44e0?})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/services/server/server.go:365 +0x35
+github.com/containerd/containerd/cmd/containerd/command.serve.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main.go:299 +0x8c
+created by github.com/containerd/containerd/cmd/containerd/command.serve in goroutine 1
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main.go:297 +0x158
+
+goroutine 52 [select, 134 minutes]:
+github.com/containerd/containerd/vendor/github.com/docker/go-events.(*Broadcaster).run(0xc0004605f0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/docker/go-events/broadcast.go:117 +0x145
+created by github.com/containerd/containerd/vendor/github.com/docker/go-events.NewBroadcaster in goroutine 51
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/docker/go-events/broadcast.go:39 +0x1b9
+
+goroutine 55 [sync.Cond.Wait, 134 minutes]:
+sync.runtime_notifyListWait(0xc0005a6850, 0x0)
+	/usr/lib/golang/src/runtime/sema.go:587 +0x15a
+sync.(*Cond).Wait(0x70?)
+	/usr/lib/golang/src/sync/cond.go:71 +0x85
+github.com/containerd/containerd/vendor/github.com/docker/go-events.(*Queue).next(0xc0005a8bd0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/docker/go-events/queue.go:103 +0x86
+github.com/containerd/containerd/vendor/github.com/docker/go-events.(*Queue).run(0xc0005a8bd0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/docker/go-events/queue.go:68 +0x34
+created by github.com/containerd/containerd/vendor/github.com/docker/go-events.NewQueue in goroutine 45
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/docker/go-events/queue.go:29 +0x13a
+
+goroutine 56 [select, 134 minutes]:
+github.com/containerd/containerd/events/exchange.(*Exchange).Subscribe.func3()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/events/exchange/exchange.go:169 +0x10b
+created by github.com/containerd/containerd/events/exchange.(*Exchange).Subscribe in goroutine 45
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/events/exchange/exchange.go:163 +0x52b
+
+goroutine 39 [select]:
+github.com/containerd/containerd/gc/scheduler.(*gcScheduler).run(0xc0003bb740, {0x55886973b5b8, 0xc0004606e0})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/gc/scheduler/scheduler.go:268 +0x18b
+created by github.com/containerd/containerd/gc/scheduler.init.1.func1 in goroutine 51
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/gc/scheduler/scheduler.go:132 +0x396
+
+goroutine 41 [sleep]:
+time.Sleep(0x2540be400)
+	/usr/lib/golang/src/runtime/time.go:300 +0xf4
+github.com/containerd/containerd/runtime/restart/monitor.(*monitor).run(0xc00067c390, 0xc0003df420?)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/runtime/restart/monitor/monitor.go:108 +0x39
+created by github.com/containerd/containerd/runtime/restart/monitor.init.0.func1 in goroutine 51
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/runtime/restart/monitor/monitor.go:85 +0x22b
+
+goroutine 42 [IO wait, 134 minutes]:
+internal/poll.runtime_pollWait(0x7f898cd7a028, 0x72)
+	/usr/lib/golang/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000100ae0?, 0xc00070fe6b?, 0x1)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000100ae0, {0xc00070fe6b, 0x10000, 0x10000})
+	/usr/lib/golang/src/internal/poll/fd_unix.go:165 +0x27a
+os.(*File).read(...)
+	/usr/lib/golang/src/os/file_posix.go:29
+os.(*File).Read(0xc00012e640, {0xc00070fe6b?, 0x0?, 0x0?})
+	/usr/lib/golang/src/os/file.go:124 +0x52
+github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify.(*Watcher).readEvents(0xc00038b860)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify/backend_inotify.go:356 +0xc5
+created by github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify.NewWatcher in goroutine 51
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify/backend_inotify.go:150 +0x186
+
+goroutine 43 [select, 134 minutes]:
+github.com/containerd/containerd/vendor/tags.cncf.io/container-device-interface/pkg/cdi.(*watch).watch(0xc000585350, 0xc00038b860, 0xc00038b6d0, 0xc000585370, 0xc00067fcb0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/tags.cncf.io/container-device-interface/pkg/cdi/cache.go:526 +0xcc
+created by github.com/containerd/containerd/vendor/tags.cncf.io/container-device-interface/pkg/cdi.(*watch).start in goroutine 51
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/tags.cncf.io/container-device-interface/pkg/cdi/cache.go:506 +0xb2
+
+goroutine 44 [IO wait, 134 minutes]:
+internal/poll.runtime_pollWait(0x7f898cd79f10, 0x72)
+	/usr/lib/golang/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000100de0?, 0xc00072fe6b?, 0x1)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000100de0, {0xc00072fe6b, 0x10000, 0x10000})
+	/usr/lib/golang/src/internal/poll/fd_unix.go:165 +0x27a
+os.(*File).read(...)
+	/usr/lib/golang/src/os/file_posix.go:29
+os.(*File).Read(0xc00012e6c0, {0xc00072fe6b?, 0x0?, 0x0?})
+	/usr/lib/golang/src/os/file.go:124 +0x52
+github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify.(*Watcher).readEvents(0xc00038bb80)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify/backend_inotify.go:356 +0xc5
+created by github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify.NewWatcher in goroutine 51
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/github.com/fsnotify/fsnotify/backend_inotify.go:150 +0x186
+
+goroutine 45 [select, 134 minutes]:
+github.com/containerd/containerd/pkg/cri/server.(*criService).Run(0xc0003a4f08, 0xc00054fc40)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/service.go:290 +0x7c5
+github.com/containerd/containerd/pkg/cri.initCRIService.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/cri.go:116 +0x39
+created by github.com/containerd/containerd/pkg/cri.initCRIService in goroutine 51
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/cri.go:115 +0x936
+
+goroutine 79 [select, 134 minutes]:
+github.com/containerd/containerd/pkg/cri/server.(*cniNetConfSyncer).syncLoop(0xc0002df0a0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/cni_conf_syncer.go:83 +0xbe
+github.com/containerd/containerd/pkg/cri/server.(*criService).Run.func1(0xc0006bdf98?)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/service.go:252 +0x25
+created by github.com/containerd/containerd/pkg/cri/server.(*criService).Run in goroutine 45
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/service.go:251 +0x3d7
+
+goroutine 78 [chan receive]:
+github.com/containerd/containerd/pkg/cri/server.(*snapshotsSyncer).start.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/snapshots.go:65 +0x65
+created by github.com/containerd/containerd/pkg/cri/server.(*snapshotsSyncer).start in goroutine 45
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/snapshots.go:57 +0x72
+
+goroutine 77 [select]:
+github.com/containerd/containerd/pkg/cri/server.(*eventMonitor).start.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/events.go:253 +0x11f
+created by github.com/containerd/containerd/pkg/cri/server.(*eventMonitor).start in goroutine 45
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/events.go:250 +0xb0
+
+goroutine 47 [IO wait, 45 minutes]:
+internal/poll.runtime_pollWait(0x7f898cd79ce0, 0x72)
+	/usr/lib/golang/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc0000ced80?, 0x7f89d5857108?, 0x0)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc0000ced80)
+	/usr/lib/golang/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc0000ced80)
+	/usr/lib/golang/src/net/fd_unix.go:172 +0x29
+net.(*UnixListener).accept(0x558867c96160?)
+	/usr/lib/golang/src/net/unixsock_posix.go:172 +0x16
+net.(*UnixListener).Accept(0xc0005d45a0)
+	/usr/lib/golang/src/net/unixsock.go:260 +0x30
+github.com/containerd/containerd/vendor/google.golang.org/grpc.(*Server).Serve(0xc0003e25a0, {0x558869732030, 0xc0005d45a0})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/server.go:852 +0x43a
+github.com/containerd/containerd/services/server.(*Server).ServeGRPC(0xc000460550, {0x558869732030, 0xc0005d45a0})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/services/server/server.go:360 +0x68
+github.com/containerd/containerd/cmd/containerd/command.serve.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main.go:299 +0x8c
+created by github.com/containerd/containerd/cmd/containerd/command.serve in goroutine 1
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/cmd/containerd/command/main.go:297 +0x158
+
+goroutine 80 [semacquire, 134 minutes]:
+sync.runtime_Semacquire(0x5588680cc420?)
+	/usr/lib/golang/src/runtime/sema.go:71 +0x25
+sync.(*WaitGroup).Wait(0xc00067c390?)
+	/usr/lib/golang/src/sync/waitgroup.go:118 +0x48
+github.com/containerd/containerd/pkg/cri/server.(*criService).Run.func2()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/service.go:263 +0x25
+created by github.com/containerd/containerd/pkg/cri/server.(*criService).Run in goroutine 45
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/service.go:262 +0x5c5
+
+goroutine 81 [IO wait, 134 minutes]:
+internal/poll.runtime_pollWait(0x7f898cd79bc8, 0x72)
+	/usr/lib/golang/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc00038e080?, 0x10?, 0x0)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc00038e080)
+	/usr/lib/golang/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc00038e080)
+	/usr/lib/golang/src/net/fd_unix.go:172 +0x29
+net.(*TCPListener).accept(0xc00029f880)
+	/usr/lib/golang/src/net/tcpsock_posix.go:159 +0x1e
+net.(*TCPListener).Accept(0xc00029f880)
+	/usr/lib/golang/src/net/tcpsock.go:372 +0x30
+net/http.(*Server).Serve(0xc0001f82d0, {0x558869732000, 0xc00029f880})
+	/usr/lib/golang/src/net/http/server.go:3330 +0x30c
+github.com/containerd/containerd/pkg/cri/streaming.(*server).Start(0xc0006407e0, 0x70?)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/streaming/server.go:267 +0xd7
+github.com/containerd/containerd/pkg/cri/server.(*criService).Run.func3()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/service.go:273 +0x69
+created by github.com/containerd/containerd/pkg/cri/server.(*criService).Run in goroutine 45
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/pkg/cri/server/service.go:271 +0x66d
+
+goroutine 14397 [select]:
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*controlBuffer).get(0xc000c77720, 0x1)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:418 +0x113
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*loopyWriter).run(0xc0003bc380)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:552 +0x7b
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.NewServerTransport.func2()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:336 +0xd5
+created by github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.NewServerTransport in goroutine 14402
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:333 +0x1a4c
+
+goroutine 14398 [select, 45 minutes]:
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*http2Server).keepalive(0xc000362b60)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:1152 +0x1f3
+created by github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.NewServerTransport in goroutine 14402
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:339 +0x1a8e
+
+goroutine 14399 [IO wait]:
+internal/poll.runtime_pollWait(0x7f898cd79998, 0x72)
+	/usr/lib/golang/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc0006b0500?, 0xc0006da000?, 0x0)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0006b0500, {0xc0006da000, 0x8000, 0x8000})
+	/usr/lib/golang/src/internal/poll/fd_unix.go:165 +0x27a
+net.(*netFD).Read(0xc0006b0500, {0xc0006da000?, 0x60100000000?, 0x8?})
+	/usr/lib/golang/src/net/fd_posix.go:55 +0x25
+net.(*conn).Read(0xc00007cf20, {0xc0006da000?, 0x67000601?, 0x7f898e1eb928?})
+	/usr/lib/golang/src/net/net.go:189 +0x45
+bufio.(*Reader).Read(0xc0007b5860, {0xc0006c49e0, 0x9, 0x558867c5c305?})
+	/usr/lib/golang/src/bufio/bufio.go:241 +0x197
+io.ReadAtLeast({0x558869722140, 0xc0007b5860}, {0xc0006c49e0, 0x9, 0x9}, 0x9)
+	/usr/lib/golang/src/io/io.go:335 +0x90
+io.ReadFull(...)
+	/usr/lib/golang/src/io/io.go:354
+github.com/containerd/containerd/vendor/golang.org/x/net/http2.readFrameHeader({0xc0006c49e0, 0x9, 0xc000275830?}, {0x558869722140?, 0xc0007b5860?})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/golang.org/x/net/http2/frame.go:237 +0x65
+github.com/containerd/containerd/vendor/golang.org/x/net/http2.(*Framer).ReadFrame(0xc0006c49a0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/golang.org/x/net/http2/frame.go:501 +0x85
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*http2Server).HandleStreams(0xc000362b60, 0xc0007efb90)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:636 +0x138
+github.com/containerd/containerd/vendor/google.golang.org/grpc.(*Server).serveStreams(0xc0003e25a0, {0x558869745c20, 0xc000362b60})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/server.go:979 +0x196
+github.com/containerd/containerd/vendor/google.golang.org/grpc.(*Server).handleRawConn.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/server.go:920 +0x45
+created by github.com/containerd/containerd/vendor/google.golang.org/grpc.(*Server).handleRawConn in goroutine 14402
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/server.go:919 +0x15b
+
+goroutine 14404 [select]:
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*controlBuffer).get(0xc0007df770, 0x1)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:418 +0x113
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*loopyWriter).run(0xc000355c00)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:552 +0x7b
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.NewServerTransport.func2()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:336 +0xd5
+created by github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.NewServerTransport in goroutine 14400
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:333 +0x1a4c
+
+goroutine 14405 [select, 45 minutes]:
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*http2Server).keepalive(0xc000136b60)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:1152 +0x1f3
+created by github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.NewServerTransport in goroutine 14400
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:339 +0x1a8e
+
+goroutine 14406 [IO wait]:
+internal/poll.runtime_pollWait(0x7f898cd79ab0, 0x72)
+	/usr/lib/golang/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc0005e2900?, 0xc000888000?, 0x0)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/golang/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0005e2900, {0xc000888000, 0x8000, 0x8000})
+	/usr/lib/golang/src/internal/poll/fd_unix.go:165 +0x27a
+net.(*netFD).Read(0xc0005e2900, {0xc000888000?, 0x60100000000?, 0x8?})
+	/usr/lib/golang/src/net/fd_posix.go:55 +0x25
+net.(*conn).Read(0xc00012ebe0, {0xc000888000?, 0x67000601?, 0x7f898c0e5b40?})
+	/usr/lib/golang/src/net/net.go:189 +0x45
+bufio.(*Reader).Read(0xc000b04ae0, {0xc0007b8660, 0x9, 0x558867c5c305?})
+	/usr/lib/golang/src/bufio/bufio.go:241 +0x197
+io.ReadAtLeast({0x558869722140, 0xc000b04ae0}, {0xc0007b8660, 0x9, 0x9}, 0x9)
+	/usr/lib/golang/src/io/io.go:335 +0x90
+io.ReadFull(...)
+	/usr/lib/golang/src/io/io.go:354
+github.com/containerd/containerd/vendor/golang.org/x/net/http2.readFrameHeader({0xc0007b8660, 0x9, 0xc000b82a80?}, {0x558869722140?, 0xc000b04ae0?})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/golang.org/x/net/http2/frame.go:237 +0x65
+github.com/containerd/containerd/vendor/golang.org/x/net/http2.(*Framer).ReadFrame(0xc0007b8620)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/golang.org/x/net/http2/frame.go:501 +0x85
+github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport.(*http2Server).HandleStreams(0xc000136b60, 0xc0006d10b0)
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/internal/transport/http2_server.go:636 +0x138
+github.com/containerd/containerd/vendor/google.golang.org/grpc.(*Server).serveStreams(0xc0003e25a0, {0x558869745c20, 0xc000136b60})
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/server.go:979 +0x196
+github.com/containerd/containerd/vendor/google.golang.org/grpc.(*Server).handleRawConn.func1()
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/server.go:920 +0x45
+created by github.com/containerd/containerd/vendor/google.golang.org/grpc.(*Server).handleRawConn in goroutine 14400
+	/builddir/build/BUILD/containerd-1.7.27-1.amzn2023.0.2/src/github.com/containerd/containerd/vendor/google.golang.org/grpc/server.go:919 +0x15b

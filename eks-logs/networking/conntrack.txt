@@ -1,0 +1,21 @@
+*** Output of conntrack -S *** 
+cpu=0   	found=0 invalid=0 insert=0 insert_failed=0 drop=0 early_drop=0 error=0 search_restart=0 
+cpu=1   	found=0 invalid=3 insert=0 insert_failed=0 drop=0 early_drop=0 error=0 search_restart=0 
+*** Output of conntrack -L ***
+udp      17 12 src=172.31.31.163 dst=169.254.169.123 sport=33889 dport=123 src=169.254.169.123 dst=172.31.31.163 sport=123 dport=33889 mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 117 TIME_WAIT src=172.31.31.163 dst=169.254.169.254 sport=49466 dport=80 src=169.254.169.254 dst=172.31.31.163 sport=80 dport=49466 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 431999 ESTABLISHED src=172.31.31.163 dst=172.31.40.248 sport=37242 dport=443 src=172.31.40.248 dst=172.31.31.163 sport=443 dport=37242 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+udp      17 28 src=172.31.31.163 dst=169.254.169.123 sport=45403 dport=123 src=169.254.169.123 dst=172.31.31.163 sport=123 dport=45403 mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 116 TIME_WAIT src=172.31.31.163 dst=169.254.169.254 sport=49458 dport=80 src=169.254.169.254 dst=172.31.31.163 sport=80 dport=49458 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 116 TIME_WAIT src=172.31.31.163 dst=169.254.169.254 sport=49456 dport=80 src=169.254.169.254 dst=172.31.31.163 sport=80 dport=49456 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 431996 ESTABLISHED src=172.31.31.163 dst=3.146.12.87 sport=49566 dport=443 src=3.146.12.87 dst=172.31.31.163 sport=443 dport=49566 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 0 CLOSE src=172.31.31.163 dst=185.199.109.133 sport=33870 dport=443 src=185.199.109.133 dst=172.31.31.163 sport=443 dport=33870 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+udp      17 26 src=172.31.31.163 dst=172.31.0.2 sport=57684 dport=53 src=172.31.0.2 dst=172.31.31.163 sport=53 dport=57684 mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 117 TIME_WAIT src=172.31.31.163 dst=169.254.169.254 sport=49462 dport=80 src=169.254.169.254 dst=172.31.31.163 sport=80 dport=49462 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+udp      17 26 src=172.31.31.163 dst=172.31.0.2 sport=55512 dport=53 src=172.31.0.2 dst=172.31.31.163 sport=53 dport=55512 mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+udp      17 26 src=172.31.31.163 dst=172.31.0.2 sport=58545 dport=53 src=172.31.0.2 dst=172.31.31.163 sport=53 dport=58545 mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+udp      17 26 src=172.31.31.163 dst=172.31.0.2 sport=55033 dport=53 src=172.31.0.2 dst=172.31.31.163 sport=53 dport=55033 mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+udp      17 20 src=172.31.31.163 dst=172.31.0.2 sport=44662 dport=53 src=172.31.0.2 dst=172.31.31.163 sport=53 dport=44662 mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 431996 ESTABLISHED src=172.31.31.163 dst=3.146.12.87 sport=49552 dport=443 src=3.146.12.87 dst=172.31.31.163 sport=443 dport=49552 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 117 TIME_WAIT src=172.31.31.163 dst=169.254.169.254 sport=49468 dport=80 src=169.254.169.254 dst=172.31.31.163 sport=80 dport=49468 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=1
+tcp      6 299 ESTABLISHED src=134.241.39.249 dst=172.31.31.163 sport=25073 dport=22 src=172.31.31.163 dst=134.241.39.249 sport=22 dport=25073 [ASSURED] mark=0 secctx=system_u:object_r:unlabeled_t:s0 use=2

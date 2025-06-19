@@ -1,0 +1,11 @@
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:33089         0.0.0.0:*               LISTEN      1589/containerd     
+tcp        0      0 127.0.0.1:10248         0.0.0.0:*               LISTEN      2055/kubelet        
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1516/sshd: /usr/sbi 
+tcp        0      0 172.31.31.163:49566     3.146.12.87:443         ESTABLISHED 1512/amazon-ssm-age 
+tcp        0      0 172.31.31.163:49552     3.146.12.87:443         ESTABLISHED 1512/amazon-ssm-age 
+tcp        0      0 172.31.31.163:37242     172.31.40.248:443       ESTABLISHED 2055/kubelet        
+tcp        0      0 172.31.31.163:22        134.241.39.249:25073    ESTABLISHED 2243/sshd: ec2-user 
+tcp6       0      0 :::22                   :::*                    LISTEN      1516/sshd: /usr/sbi 
+tcp6       0      0 :::10250                :::*                    LISTEN      2055/kubelet        

@@ -1,0 +1,31 @@
+meta-data=/dev/nvme0n1p1         isize=512    agcount=21, agsize=260608 blks
+         =                       sectsz=4096  attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1
+data     =                       bsize=4096   blocks=5239803, imaxpct=25
+         =                       sunit=128    swidth=128 blks
+naming   =version 2              bsize=16384  ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=4096  sunit=4 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+   from      to extents  blocks    pct
+      1       1     112     112   0.00
+      2       3      19      45   0.00
+      4       7      29     140   0.00
+      8      15      11     106   0.00
+     16      31      13     304   0.01
+     32      63      17     754   0.02
+     64     127      23    2095   0.04
+    128     255       4     655   0.01
+    256     511       3    1052   0.02
+    512    1023       3    2317   0.05
+   1024    2047       4    5644   0.12
+   2048    4095       1    3464   0.07
+   4096    8191       3   19989   0.42
+   8192   16383       2   16676   0.35
+  16384   32767       3   73372   1.55
+  32768   65535       1   59303   1.25
+ 131072  260608      18 4551553  96.07
+total free extents 266
+total free blocks 4737581
+average free extent size 17810.5

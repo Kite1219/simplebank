@@ -1,0 +1,15 @@
+PING a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10) 56(84) bytes of data.
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=1 ttl=249 time=0.900 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=2 ttl=249 time=0.910 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=3 ttl=249 time=0.883 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=4 ttl=249 time=0.864 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=5 ttl=249 time=0.915 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=6 ttl=249 time=0.862 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=7 ttl=249 time=0.873 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=8 ttl=249 time=0.858 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=9 ttl=249 time=0.875 ms
+64 bytes from a961edf72200aa9b1.awsglobalaccelerator.com (99.83.145.10): icmp_seq=10 ttl=249 time=0.883 ms
+
+--- a961edf72200aa9b1.awsglobalaccelerator.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 55ms
+rtt min/avg/max/mdev = 0.858/0.882/0.915/0.019 ms, ipg/ewma 6.057/0.884 ms
