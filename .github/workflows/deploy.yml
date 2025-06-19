@@ -44,11 +44,6 @@ jobs:
 
     - name: Update kube config
       run: aws eks update-kubeconfig --name simple-bank --region us-east-2
-      
-    - name: Test cluster connection
-      run: |
-        kubectl cluster-info
-        kubectl get nodes
 
     - name: Deploy image to Amazon EKS
       run: |
