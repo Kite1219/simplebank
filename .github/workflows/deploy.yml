@@ -48,6 +48,7 @@ jobs:
 
     - name: Deploy image to Amazon EKS
       run: |
+        aws sts get-caller-identity
         kubectl apply -f eks/aws-auth.yaml
         kubectl apply -f eks/deployment.yaml
         kubectl apply -f eks/service.yaml
