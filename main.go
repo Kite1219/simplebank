@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 
 	"github.com/kite1209/simplebank/api"
@@ -10,12 +11,12 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func main() {
+func main() { // or whatever your DSN variable is
 	config, err := util.LoadConfig(".")
 	if err != nil {
 		log.Fatal("cannot load config", err)
 	}
-
+	fmt.Println("DB connection:", config.DBSource)
 	conn, err := sql.Open(config.DBDriver, config.DBSource)
 	if err != nil {
 		log.Fatal("cannot connect to the database", err)

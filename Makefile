@@ -1,3 +1,4 @@
+DB_URL=postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable
 changedir:
 	cd /mnt/d/Codes/backend/simplebank
 
@@ -12,16 +13,16 @@ dropdb:
 	docker exec -it postgres17 dropdb simple_bank
 
 migrateup:
-	migrate -path ./db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+	migrate -path ./db/migration -database "${DB_URL}" -verbose up
 
 migrateup1:
-	migrate -path ./db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up 1
+	migrate -path ./db/migration -database "${DB_URL}" -verbose up 1
 
 migratedown:
-	migrate -path ./db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
+	migrate -path ./db/migration -database "${DB_URL}" -verbose down
 
 migratedown1:
-	migrate -path ./db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down 1
+	migrate -path ./db/migration -database "${DB_URL}" -verbose down 1
 
 sqlc:
 	sqlc generate
@@ -35,5 +36,11 @@ server:
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/kite1209/simplebank/db/sqlc Store
 
-.PHONY: server postgres createdb dropdb migrateup migratedown migrateup1 migratedown1 sqlc mock
+db_docs:
+	dbdocs build doc/db.dbml
+
+db_schema:
+	dbml2sql -postgres -o doc/schema.sql doc/db.dbml
+
+.PHONY: server postgres createdb dropdb migrateup migratedown migrateup1 migratedown1 sqlc mock db_docs db_schema
 
